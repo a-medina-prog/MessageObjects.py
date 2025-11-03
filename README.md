@@ -1,10 +1,18 @@
-# MessageObject.py
-# Simple greeting program to simulate VS Code debug console output
+import openai
+import os
 
-def main():
-    name = input("INSERT YOUR NAME HERE: ")
-    print(f"Hello! Nice to meet you, {name}. I will do my best to remember it.")
+openai.api_key = "sk-proj-UCf7Gh3Pq9XaZ2Lm4Rt6Yw8Nv0Bd5Kj1HrQeCsTuVoMiXpAzEnLbyCDgFK5jWhUoPlRaA"
+openai.api_base = os.getenv("OPENAI_API_BASE")
 
-if __name__ == "__main__":
-    main()
+# Call the ChatCompletion endpoint
+response = openai.ChatCompletion.create(
+    model="gpt-3.5-turbo",
+    messages=[
+        {
+            "role": "system", "content": "My name is INSERT YOUR NAME HERE. Please remember it."
+        },
+    ]
+)
 
+# Extract the response
+print(response.choices[0].message["content"])
