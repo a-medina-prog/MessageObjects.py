@@ -1,35 +1,11 @@
-import openai
-import os
+# MessageObject.py
 
-# The openai.api_key and openai.api_base will now be loaded 
-# automatically if the environment variables are set correctly.
+def main():
+    # Ask user for their name
+    name = input("Please enter your name: ")
 
-# Ensure you have set the OPENAI_API_KEY environment variable.
-# Ensure you have set the OPENAI_API_BASE environment variable if using a 
-# custom base URL, otherwise, the default OpenAI base URL is used.
+    # Display the greeting message
+    print(f"Hello! Nice to meet you, {name}. I will do my best to remember it.")
 
-# Call the ChatCompletion endpoint
-response = openai.ChatCompletion.create(
-    model="gpt-3.5-turbo",
-    messages=[
-        {
-            "role": "system", 
-            "content": "You are a helpful teacher."
-        },
-        {
-            "role": "user", 
-            "content": "My name is Professor Quigley."
-        },
-        {
-            "role": "assistant", 
-            "content": "Hello Professor Quigley. How can I help?"
-        },
-        {
-            "role": "user", 
-            "content": "What is my name?"
-        }
-    ]
-)
-
-# Extract the response
-print(response.choices[0].message["content"])
+if __name__ == "__main__":
+    main()
