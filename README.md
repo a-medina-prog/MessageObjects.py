@@ -1,7 +1,7 @@
 import openai
 import os
 
-openai.api_key = "sk-proj-UCf7Gh3Pq9XaZ2Lm4Rt6Yw8Nv0Bd5Kj1HrQeCsTuVoMiXpAzEnLbyCDgFK5jWhUoPlRaA"
+openai.api_key = "sk-proj-UCf7Gh3Pq9XaZ2Lm4Rt6Yw8Nv0Bd5Kj1HrQeCsTuVoMiXpAzEnLbYcDgFkSjWhUoPlRaA"
 openai.api_base = os.getenv("OPENAI_API_BASE")
 
 # Call the ChatCompletion endpoint
